@@ -3,6 +3,7 @@
 <head>
   <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <!-- test for multi Markers -->
 <body style='margin : 0px; overflow: hidden;'>
@@ -15,37 +16,31 @@
     <a-entity camera></a-entity>
   </a-scene>
   <script>
+    jQuery.loadScript = function (url, callback) {
+      jQuery.ajax({
+        url: url,
+        dataType: 'script',
+        success: callback,
+        async: true
+      });
+    }
     var cameraMarker = document.getElementById("marker1");
     var pratikMarker = document.getElementById("marker2");
     cameraMarkerDetected = setInterval(function(){
+      js = "scripts/scapicMarkerScript.js";
       if(cameraMarker.object3D.visible == true){
-        var entity = document.createElement('a-entity');
-        entity.setAttribute('geometry', {
-          primitive: 'plane'
+        $.loadScript(js,function(){
+            console.log("loaded");
         });
-        entity.setAttribute('material', {
-          src: 'https://assets.scapic.com/j3u23iow000s4d8b441umszq/files/gb819zsj4goxeyl',
-          side: 'double'
-        });
-        entity.setAttribute('position', "0 0.4 0");
-        entity.setAttribute('rotation', "-90 0 0");
-        cameraMarker.appendChild(entity);
         clearInterval(cameraMarkerDetected);
       }
     },300);
     pratikMarkerDetected = setInterval(function(){
+      js = "/scripts/pratikMarkerScript.js";
       if(pratikMarker.object3D.visible == true){
-        var entity = document.createElement('a-entity');
-        entity.setAttribute('geometry', {
-          primitive: 'plane'
+        $.loadScript(js,function(){
+            console.log("loaded");
         });
-        entity.setAttribute('material', {
-          src: 'https://assets.scapic.com/j3u23iow000s4d8b441umszq/files/2ny7nxsj4gv025k',
-          side: 'double'
-        });
-        entity.setAttribute('position', "0 0.4 0");
-        entity.setAttribute('rotation', "-90 0 0");
-        pratikMarker.appendChild(entity);
         clearInterval(pratikMarkerDetected);
       }
     },300)
