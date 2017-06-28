@@ -1,0 +1,56 @@
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+</head>
+<!-- test for multi Markers -->
+<body style='margin : 0px; overflow: hidden;'>
+  <a-scene embedded artoolkit='sourceType: webcam;'>
+    <a-marker id="marker1" type="pattern" url="patterns/scapic.patt">
+    </a-marker>
+    <a-marker id="marker2" type="pattern" url="patterns/patt.pratik">
+    </a-marker>
+
+    <a-entity camera></a-entity>
+  </a-scene>
+  <script>
+    var cameraMarker = document.getElementById("marker1");
+    var pratikMarker = document.getElementById("marker2");
+    cameraMarkerDetected = setInterval(function(){
+      if(cameraMarker.object3D.visible == true){
+        var entity = document.createElement('a-entity');
+        entity.setAttribute('geometry', {
+          primitive: 'plane'
+        });
+        entity.setAttribute('material', {
+          src: 'https://assets.scapic.com/j3u23iow000s4d8b441umszq/files/gb819zsj4goxeyl',
+          side: 'double'
+        });
+        entity.setAttribute('position', "0 0.4 0");
+        entity.setAttribute('rotation', "-90 0 0");
+        cameraMarker.appendChild(entity);
+        clearInterval(cameraMarkerDetected);
+      }
+    },300);
+    pratikMarkerDetected = setInterval(function(){
+      if(pratikMarker.object3D.visible == true){
+        var entity = document.createElement('a-entity');
+        entity.setAttribute('geometry', {
+          primitive: 'plane'
+        });
+        entity.setAttribute('material', {
+          src: 'https://assets.scapic.com/j3u23iow000s4d8b441umszq/files/2ny7nxsj4gv025k',
+          side: 'double'
+        });
+        entity.setAttribute('position', "0 0.4 0");
+        entity.setAttribute('rotation', "-90 0 0");
+        pratikMarker.appendChild(entity);
+        clearInterval(pratikMarkerDetected);
+      }
+    },300)
+
+  </script>
+</body>
+
+</html>
