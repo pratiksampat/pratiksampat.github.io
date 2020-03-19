@@ -1,51 +1,132 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Pratik Sampat</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Scope+One&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script&display=swap" rel="stylesheet">
+
+    <link href="style/style.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+
 </head>
-<!-- test for multi Markers -->
-<body style='margin : 0px; overflow: hidden;'>
-  <a-scene embedded artoolkit='sourceType: webcam;'>
-    <a-marker id="marker1" type="pattern" url="patterns/scapic.patt">
-    </a-marker>
-    <a-marker id="marker2" type="pattern" url="patterns/patt.pratik">
-    </a-marker>
 
-    <a-entity camera></a-entity>
-  </a-scene>
-  <script>
-    jQuery.loadScript = function (url, callback) {
-      jQuery.ajax({
-        url: url,
-        dataType: 'script',
-        success: callback,
-        async: true
-      });
-    }
-    var cameraMarker = document.getElementById("marker1");
-    var pratikMarker = document.getElementById("marker2");
-    cameraMarkerDetected = setInterval(function(){
-      js = "scripts/scapicMarkerScript.js";
-      if(cameraMarker.object3D.visible == true){
-        $.loadScript(js,function(){
-            console.log("loaded");
-        });
-        clearInterval(cameraMarkerDetected);
-      }
-    },300);
-    pratikMarkerDetected = setInterval(function(){
-      js = "/scripts/pratikMarkerScript.js";
-      if(pratikMarker.object3D.visible == true){
-        $.loadScript(js,function(){
-            console.log("loaded");
-        });
-        clearInterval(pratikMarkerDetected);
-      }
-    },300)
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" style="background-color:rgb(0, 110, 255);;">
+        <a class="navbar-brand" href="#main" style="font-family: 'Bad Script', serif; font-size: 23px;">Pratik
+            Rajesh
+            Sampat</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-  </script>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#main">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#one">About me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Awards</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+            </ul>
+            <div class="my-2 my-lg-0">
+                <a class="navbar-brand" href="https://github.com/pratiksampat">
+                    <img class="mr-sm-1" height="35" width="35" src="https://img.icons8.com/color/48/000000/git.png" />
+                </a>
+                <a class="navbar-brand"
+                    href="https://www.google.com/search?domains=lkml.org&q=Pratik+Rajesh+Sampat&sa=Google+Search&sitesearch=lkml.org&client=pub-3128732077138691&forid=1&ie=UTF-8&oe=UTF-8&flav=0000&sig=IZwGi0IG8Xeqz31p&cof=GALT%3A%23008000%3BGL%3A1%3BDIV%3A%23336699%3BVLC%3A663399%3BAH%3Acenter%3BBGC%3AFFFFFF%3BLBGC%3Adde8e8%3BALC%3A0000FF%3BLC%3A0000FF%3BT%3A000000%3BGFNT%3A0000FF%3BGIMP%3A0000FF%3BFORID%3A1&hl=en">
+                    <img class="mr-sm-1" height="32" width="32"
+                        src="https://img.icons8.com/color/48/000000/linux.png" />
+                </a>
+                <a class="navbar-brand" href="https://www.linkedin.com/in/pratik-sampat/">
+                    <img class="mr-sm-3" height="32" width="32"
+                        src="https://img.icons8.com/dusk/64/000000/linkedin.png" />
+                </a>
+                <a class="navbar-brand" href="https://github.com/pratiksampat">
+                    <img class="mr-sm-3" height="32" width="32" src="https://img.icons8.com/dusk/64/000000/email.png" />
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="main">
+        <div class="jumbotron jumbotron-fluid" style="background-color: rgb(0, 110, 255); height:92vh;">
+            <div class="container container-fluid">
+                <h1 class="display-3" style="color: white; position: relative; top:10vh;">Hi, I'm Pratik Sampat</h1>
+                <p class="lead" style="color: white; position: relative; top:10vh">I am a Linux kernel developer working
+                    with IBM based in Bangalore, India.</p>
+                <p class="lead" style="color: white; position: relative; top:10vh">Linux Hacker | Dreamer | DIYer</p>
+
+                <a href="#one">
+                    <button style="position: relative; top:10vh" type="button" class="btn btn-warning">Know
+                        more</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="one">
+        <div class="position-relative overflow-hidden text-center">
+            <div class="card-group">
+                <div class="card text-white">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="https://dummyimage.com/400x500/000/fff" alt="">
+                        <a href="index.html">
+                            <div class="overlay d-flex flex-column justify-content-center">
+                                <h2>Resume</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card text-white">
+                    <div class="hovereffect" style="background: blue;">
+                        <img class="img-responsive" src="https://dummyimage.com/400x500/000/fff" alt="">
+                        <a href="index.html">
+                            <div class="overlay d-flex flex-column justify-content-center">
+                                <h2>About me</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="card text-white">
+                    <div class="hovereffect" style="background: red;">
+                        <img class="img-responsive" src="https://dummyimage.com/400x500/000/fff" alt="">
+                        <a href="index.html">
+                            <div class="overlay d-flex flex-column justify-content-center">
+                                <h2>Awards</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
