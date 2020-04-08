@@ -7,6 +7,31 @@ h2,p {
 html {
     scroll-behavior: smooth;
 }
+::-webkit-scrollbar
+{
+  width: 5px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: white;
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: #ffc107;
+}
+
+.sticky-top {
+    transition: background-color 300ms linear;
+}
+
+.sticky-top.scrolled {
+    background-color: rgb(252, 250, 250) !important;
+    transition: background-color 300ms linear;
+}
+
 .hovereffect {
     width: 100%;
     height: 100%;
