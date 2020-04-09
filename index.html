@@ -28,138 +28,123 @@
     <script>
         $(function () {
             $(document).scroll(function () {
-            var $nav = $(".sticky-top");
-            $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-            $nav.toggleClass('navbar-dark', $(this).scrollTop() < $nav.height());
-            $nav.toggleClass('navbar-light', $(this).scrollTop() > $nav.height());
+                var $nav = $(".sticky-top");
+                $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+                $nav.toggleClass('navbar-dark', $(this).scrollTop() < $nav.height());
+                $nav.toggleClass('navbar-light', $(this).scrollTop() > $nav.height());
             });
         });
     </script>
 </head>
 
 <body>
-    <div id="main"></div>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color:rgba(0, 0, 0, 0.89);">
-        <a class="navbar-brand" href="#main" style="font-family: 'Bad Script', serif; font-size: 23px;">Pratik
-            Rajesh
-            Sampat</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="intro">
+        <div id="main"></div>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color:rgba(0, 0, 0, 0);">
+            <a class="navbar-brand" href="#main" style="font-family: 'Bad Script', serif; font-size: 23px;">Pratik
+                Rajesh
+                Sampat</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#main">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About me</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="resume.html">Resume</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Awards</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="credits.html">Credits</a>
-                </li>
-            </ul>
-            <div class="my-2 my-lg-0">
-                <a class="navbar-brand" href="https://github.com/pratiksampat">
-                    <img class="mr-sm-1" height="35" width="35" src="https://img.icons8.com/color/48/000000/git.png" />
-                </a>
-                <a class="navbar-brand"
-                    href="https://www.google.com/search?domains=lkml.org&q=Pratik+Rajesh+Sampat&sa=Google+Search&sitesearch=lkml.org&client=pub-3128732077138691&forid=1&ie=UTF-8&oe=UTF-8&flav=0000&sig=IZwGi0IG8Xeqz31p&cof=GALT%3A%23008000%3BGL%3A1%3BDIV%3A%23336699%3BVLC%3A663399%3BAH%3Acenter%3BBGC%3AFFFFFF%3BLBGC%3Adde8e8%3BALC%3A0000FF%3BLC%3A0000FF%3BT%3A000000%3BGFNT%3A0000FF%3BGIMP%3A0000FF%3BFORID%3A1&hl=en">
-                    <img class="mr-sm-1" height="32" width="32"
-                        src="https://img.icons8.com/color/48/000000/linux.png" />
-                </a>
-                <a class="navbar-brand" href="https://www.linkedin.com/in/pratik-sampat/">
-                    <img class="mr-sm-3" height="32" width="32"
-                        src="https://img.icons8.com/dusk/64/000000/linkedin.png" />
-                </a>
-                <a class="navbar-brand" href="https://github.com/pratiksampat">
-                    <img class="mr-sm-3" height="32" width="32" src="https://img.icons8.com/dusk/64/000000/email.png" />
-                </a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#main">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="resume.html">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Awards</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="credits.html">Credits</a>
+                    </li>
+                </ul>
+                <div class="my-2 my-lg-0">
+                    <a class="navbar-brand" href="https://github.com/pratiksampat">
+                        <img class="mr-sm-1" height="35" width="35"
+                            src="https://img.icons8.com/color/48/000000/git.png" />
+                    </a>
+                    <a class="navbar-brand"
+                        href="https://www.google.com/search?domains=lkml.org&q=Pratik+Rajesh+Sampat&sa=Google+Search&sitesearch=lkml.org&client=pub-3128732077138691&forid=1&ie=UTF-8&oe=UTF-8&flav=0000&sig=IZwGi0IG8Xeqz31p&cof=GALT%3A%23008000%3BGL%3A1%3BDIV%3A%23336699%3BVLC%3A663399%3BAH%3Acenter%3BBGC%3AFFFFFF%3BLBGC%3Adde8e8%3BALC%3A0000FF%3BLC%3A0000FF%3BT%3A000000%3BGFNT%3A0000FF%3BGIMP%3A0000FF%3BFORID%3A1&hl=en">
+                        <img class="mr-sm-1" height="32" width="32"
+                            src="https://img.icons8.com/color/48/000000/linux.png" />
+                    </a>
+                    <a class="navbar-brand" href="https://www.linkedin.com/in/pratik-sampat/">
+                        <img class="mr-sm-3" height="32" width="32"
+                            src="https://img.icons8.com/dusk/64/000000/linkedin.png" />
+                    </a>
+                    <a class="navbar-brand" href="https://github.com/pratiksampat">
+                        <img class="mr-sm-3" height="32" width="32"
+                            src="https://img.icons8.com/dusk/64/000000/email.png" />
+                    </a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
 
-    <div id="intro" class="view">
 
-            <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+        <div class="container-fluid d-flex align-items-center justify-content-center" style="height: 100vh;">
 
-                <div class="row d-flex justify-content-center text-center">
+            <div class="row d-flex justify-content-center text-center">
 
-                    <div class="col-md-10">
+                <div class="col-md-10">
 
-                        <!-- Heading -->
-                        <h3 class="display-4 pt-4 mb-2" style="color:white">Hi, I'm Pratik Sampat</h2>
+                    <h3 class="display-4 pt-4 mb-2" style="color:white">Hi, I'm Pratik Sampat</h2>
 
-                        <!-- Description -->
                         <p class="lead" style="color: white; position: relative; ">I am a Linux kernel developer working
                             with IBM based in Bangalore, India.</p>
                         <p class="lead" style="color: white; position: relative; ">Linux Hacker | Dreamer | DIYer</p>
-                        
+
                         <a href="#one"><button type="button" class="btn btn-outline-warning">Know More</button></a>
-
-                    </div>
-
                 </div>
 
             </div>
-    </div>
 
-    <!-- <div class="jumbotron jumbotron-fluid" style="background-color: rgb(0, 110, 255); height:92vh;">
-        <div class="container container-fluid">
-            <h1 class="display-3" style="color: white; position: relative; top:10vh;">Hi, I'm Pratik Sampat</h1>
-            <p class="lead" style="color: white; position: relative; top:10vh">I am a Linux kernel developer working
-                with IBM based in Bangalore, India.</p>
-            <p class="lead" style="color: white; position: relative; top:10vh">Linux Hacker | Dreamer | DIYer</p>
-
-            <a href="#one">
-                <button style="position: relative; top:10vh;" type="button" class="btn btn-warning">Know
-                    more</button>
-            </a>
         </div>
-    </div> -->
 
-    <div id="one">
-        <div class="position-relative overflow-hidden text-center">
-            <div class="card-group">
-                <div class="card text-white">
-                    <div class="hovereffect">
-                        <img class="img-responsive" src="images/tree.jpg" alt="">
-                        <a href="resume.html">
-                            <div class="overlay d-flex flex-column justify-content-center">
-                                <h2 style="">Resume</h2>
-                            </div>
-                        </a>
+        <div id="one">
+            <div class="position-relative overflow-hidden text-center">
+                <div class="card-group">
+                    <div class="card text-white">
+                        <div class="hovereffect">
+                            <img class="img-responsive" src="images/tree.jpg" alt="">
+                            <a href="resume.html">
+                                <div class="overlay d-flex flex-column justify-content-center">
+                                    <h2 style="">Resume</h2>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="card text-white">
-                    <div class="hovereffect" style="background: rgb(18, 71, 139);">
-                        <img class="img-responsive" src="images/sea.jpg" alt="">
-                        <a href="about.html">
-                            <div class="overlay d-flex flex-column justify-content-center">
-                                <h2 style="">About me</h2>
-                            </div>
-                        </a>
+                    <div class="card text-white">
+                        <div class="hovereffect" style="background: rgb(18, 71, 139);">
+                            <img class="img-responsive" src="images/sea.jpg" alt="">
+                            <a href="about.html">
+                                <div class="overlay d-flex flex-column justify-content-center">
+                                    <h2 style="">About me</h2>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="card text-white">
-                    <div class="hovereffect" style="background: rgb(139, 56, 18)">
-                        <img class="img-responsive" src="images/mountain.jpg" alt="">
-                        <a href="index.html">
-                            <div class="overlay d-flex flex-column justify-content-center">
-                                <h2>Awards</h2>
-                            </div>
-                        </a>
+                    <div class="card text-white">
+                        <div class="hovereffect" style="background: rgb(139, 56, 18)">
+                            <img class="img-responsive" src="images/mountain.jpg" alt="">
+                            <a href="index.html">
+                                <div class="overlay d-flex flex-column justify-content-center">
+                                    <h2>Awards</h2>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
