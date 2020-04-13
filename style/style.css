@@ -8,6 +8,10 @@ html {
     scroll-behavior: smooth;
 }
 
+div.visible {
+    display:none;
+}
+
 .intro {
     background: url("../images/intro.jpg")no-repeat center center fixed;
     -webkit-background-size: cover;
