@@ -47,13 +47,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="about.html">About me</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="resume.html">Resume</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Awards</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="junkcode.html">Junk Code</a>
                 </li>
                 <li class="nav-item">
@@ -86,15 +86,55 @@
         </div>
     </nav>
 
-   <img src="images/resume.jpg" class="img-fluid mx-auto d-block" style="width: 80vh;"/>
+    <div class="jumbotron">
+        <div class="container">
+            <h2> Junk code that is sometimes useful</h2>
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        CPU Idle Latency Measurement
+                      </button>
+                    </h2>
+                  </div>
+              
+                  <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        A kernel module + userspace driver to estimate the wakeup latency caused by going into stop states. The motivation behind this program is to find significant deviations behind advertised latency and residency values <br> <br>
 
-   <footer class="page-footer font-small cyan darken-3">
-       <!-- Footer Elements -->
-       <div class="container">
-           <div class="footer-copyright text-center py-3">© 2020 Copyright: Pratik Rajesh Sampat
-           </div>
-       </div>
-   </footer>
+                        The program measures latencies for two kinds of events. IPIs and Timers. As this is a software-only mechanism, there will additional latency for the kernel-firmware-hardware interactions. To account for that, the program measures a baseline latency on a 100 percent loaded CPU and the latecies achived must be in view of that. <br>
+                        <a href="https://github.com/pratiksampat/cpuidle-latency-measurements"> Github Repo + Documentation</a> <br>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        CPU-Hotplug and idle stress test
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        Stress test hotplug and idle with the power of randomness. Pick random cores and pick random threads within them to stress-test the cpuidle framework. <br>
+                        Usage: Control either by duration (-d seconds ) or iterations (-i iterations) <br>
+                        Default runtime: 10 mins <br>
+                        <a href="./Junk_Code/cpuidle_stress.html">cpuidle_stress.sh</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    <footer class="page-footer font-small cyan darken-3">
+        <!-- Footer Elements -->
+        <div class="container">
+            <div class="footer-copyright text-center py-3">© 2020 Copyright: Pratik Rajesh Sampat
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
