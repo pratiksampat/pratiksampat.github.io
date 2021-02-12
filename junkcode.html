@@ -68,6 +68,46 @@
                     </div>
                   </div>
                 </div>
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Timebase drift identifer
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                      Module-based API test to test for any TimeBase anomalies or drifts from one CPU to another over time <br>
+                      Inspired from the <a href="https://ozlabs.org/~anton/junkcode/check_timebase.c">userspace program by Anton Blanchard</a>, this program works in the kernel
+                      therefore giving us a closer time-view of the system.<br>
+                      <a href="https://github.com/pratiksampat/cpu-timebase-drift">GitHub repository</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingFour">
+                    <h2 class="mb-0">
+                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                        CPU idle real exit statistics
+                      </button>
+                    </h2>
+                  </div>
+                  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                    <div class="card-body">
+                      The current sysfs usage and time statistics show us the statistics of the number of times an idle state was requested. However, the hardware may not grant that request and may send it to another idle state.<br>
+
+                      The POWER hardware tells us the exit idle state using a Special Purpose Register PSSCR's PLS (Power Level Saving) bits bits. <br>
+
+                      The sysfs interface is generically added for per-cpu per-idle state variables in the name of "real_usage" and "real_time" and their counters are leveraged in arch specific code. <br>
+
+                      To port to other arch's just import the "cpuidle_devices" per-cpu variable and increments counts based on your hardware's feedback. <br>
+
+                      The gist contains a patch for the Linux kernel and I've also written a driver program in Python to track usage/time vs real usage/time stats to show a more accurate depiction of how idle states are used.<br>
+                      <a href="https://gist.github.com/pratiksampat/6b2d9cde78f33c393bbffaae0c7e073a">Gist cpuidle tracking</a>
+                    </div>
+                  </div>
+                </div>
               </div>
         </div>
     </div>
