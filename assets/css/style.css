@@ -853,7 +853,8 @@ main {
   width: 6px;
   background: var(--illini-blue);
   border-radius: 50%;
-  box-shadow: 0 0 0 4px var(--illini-blue);
+  outline: 1px solid #fff;
+  box-shadow: 0 0 0 5px var(--illini-blue);
 }
 
 .timeline-text {
