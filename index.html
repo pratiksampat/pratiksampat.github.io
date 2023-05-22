@@ -178,6 +178,10 @@
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>News</button>
           </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Junk Code</button>
+          </li>
         </ul>
 
       </nav>
@@ -621,6 +625,115 @@
 
           </ul>
 
+        </section>
+
+      </article>
+
+      <!--
+        - #Junk Code
+      -->
+      <article class="junk" data-page="junk code">
+
+        <header>
+          <h2 class="h2 article-title">Junk Code</h2>
+        </header>
+
+        <!-- <section class="about-text">
+          This page contains code and projects that haven't been merged in the Linux mainline,
+          either because people didn't find it too useful or I had written this code for very specific debugging scenarios.
+
+          Regardless, their state remains danging and I log them in there just in case they are useful at some point in time.
+        </section> -->
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="cube"></ion-icon>
+            </div>
+
+            <h3 class="h3">Cloud and Containerization</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">CPU namespace</h4>
+              <p class="timeline-text">
+                CPU isolation for containers. Provides consistency of sys/proc/cgroup fs interfaces. Also, improves security and performance.
+                <a href="https://lore.kernel.org/lkml/20211009151243.8825-1-psampat@linux.ibm.com/" class="regular"> Linux Patches </a> ,
+                <a href="https://www.phoronix.com/news/Linux-CPU-Namespace" class="regular">Phoronix article</a>
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Cgroup Control</h4>
+              <p class="timeline-text">
+                A simple script that helps in creating and controlling
+                cgroups. Used when we want to avoid Docker overheads,
+                and either do not wish to directly interact with the cgroup-tools
+                like cgcreate,cgexec, etc; or this toolset is unavailable/unsupported.
+                <a href="https://gist.github.com/pratiksampat/d697b17a5eea83b91adba28b16409f94" class="regular">
+                  Github Gist
+                </a>
+              </p>
+            </li>
+          </ol>
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="flash"></ion-icon>
+            </div>
+
+            <h3 class="h3">Energy Management</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Weighted TEO Governor</h4>
+              <p class="timeline-text">
+                Improvements to the current idle state governor's non deterministic event prediction algorithm. Uses a weighted history to create a probability distribution of the idle states rather the sliding window history.
+                <a href="https://lore.kernel.org/all/20200511141055.43029-1-psampat@linux.ibm.com/" class="regular"> Linux Patches </a> , <a href="https://lwn.net/Articles/820432/" class="regular"> LWN article </a>
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">CPU-idle latency self-test framework</h4>
+              <p class="timeline-text">
+               Estimate the wakeup latency caused by going into idle states.
+               Hardware may certify certain latencies, however firmware and kernel overheads may exist. This will then lead idle governors making energy mangement decisions based on incorrect residency assumptions.
+               Aim is to find significant deviations between advertised latency and residency
+               values in the kernel space. <a href="https://lore.kernel.org/all/20210611124154.56427-1-psampat@linux.ibm.com/" class="regular"> Linux Patches </a>
+            </li>
+          </ol>
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="bug"></ion-icon>
+            </div>
+
+            <h3 class="h3">Debugging</h3>
+          </div>
+
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">CPU-idle Verifier</h4>
+              <p class="timeline-text">
+                A processor may lose information in many registers based on how deep of an idle state it has gone. The platform saves and restores these registers on a wakeup.
+                However, any inconsistency in restoring can lead to catastrophic failure which may not always crash the system upfront. A kernel debugging patch written for IBM POWER9 to verify the consistency of the registers before and after an idle state is evoked. <a href="https://gist.github.com/pratiksampat/65ae79de1dfdfe0bbb591de957296252" class="regular"> Linux Patches</a>
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">CPU hotplug and Idle stress test</h4>
+              <p class="timeline-text">
+                Emulates long running behavior of usage of CPU power management in relatively short and intensive runs. <a href="https://gist.github.com/pratiksampat/4ef6b077662cfed1a8ede0393ae7f307" class="regular"> Bash Script </a>
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">TimeBase Drift</h4>
+              <p class="timeline-text">
+                If the hardware timebase does not perform with monotonicity, the system fails in a cascading dominos of subsystem failures, making it incredibly difficult to pinpoint the root cause. A debug kernel module to identify timebase anomalies on the platform had been written to test any and all processors for such anomalies.
+                <a href="https://github.com/pratiksampat/cpu-timebase-drift" class="regular"> Kernel module </a>
+              </p>
+            </li>
+          </ol>
         </section>
 
       </article>
