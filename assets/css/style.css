@@ -391,6 +391,9 @@ main {
   width: max-content;
   padding: 3px 12px;
   border-radius: 8px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 
 .info_more-btn {
@@ -497,7 +500,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: var(--illini-blue);
+  background: hsla(0, 0%, 11%, 0.95);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -851,7 +854,8 @@ main {
   left: -33px;
   height: 6px;
   width: 6px;
-  background: var(--illini-blue);
+  /* background: var(--illini-blue); */
+  background: hsla(0, 0%, 19%, 0.95);
   border-radius: 50%;
   outline: 1px solid #fff;
   box-shadow: 0 0 0 5px var(--illini-blue);
@@ -1376,7 +1380,12 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .info-content .name { margin-bottom: 15px; }
 
-  .info-content .title { padding: 5px 18px; }
+  .info-content .title {
+    padding: 5px 25px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
 
   .info_more-btn {
     top: -30px;
